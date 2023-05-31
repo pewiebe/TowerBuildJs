@@ -1,3 +1,5 @@
+## Desenvolvido por, Leandro, Gabriel, Luiz, Alana e Samuel/Pewiebe
+
 ## Tecnologias usadas :computer:
 <div style="display: inline_block">
  <img align="center" alt="Lops-HTML" height="30" width="50" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg">-
