@@ -1,58 +1,64 @@
-[![LICENSE](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+## Tecnologias usadas :computer:
+<div style="display: inline_block">
+ <img align="center" alt="Lops-HTML" height="30" width="50" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg">-
+ <img align="center" alt="Lops-CSS" height="30" width="50" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg">-
+ <img align="center" alt="Lops-Js" height="30" width="50" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg">
+</div> 
 
-English | [简体中文](./README.zh-CN.md)
+# TowerBuild :Torre:
 
-<h1 align="center">Tower Building Game</h1>
+Português
+
+<h1 align="center">Jogo de construção de torres</h1>
 <p align="center"><img src="https://o2qq673j2.qnssl.com/tower-loading.gif"/></p>
 
-> a tower building game based on ES6 and Canvas (Tower Bloxx Deluxe Skyscraper)
+> um jogo de construção de torres baseado em ES6 e Canvas (Tower Bloxx Deluxe Skyscraper)
 
 ## Demo
 <p align="center"><img src="https://user-images.githubusercontent.com/17680888/47480922-93a20c00-d864-11e8-8f7c-6d1d60184730.gif"/></p>
-<h2 align="center"><a href="https://iamkun.github.io/tower_game">Link to online Demo (Demo Link)</a></h2>
-<h4 align="center">Mobile Devices can scan following QR code:</h4>
+
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/17680888/47480646-abc55b80-d863-11e8-9337-4ea768ebe55d.png" />
+
 </p>
 
-## Game Rule
+## Regra do jogo
 
-The following are the default game rule:
+A seguir estão as regras de jogo padrão:
 
-- In every game player starts with 3 hp. Every time a Tower block is dropped player is deduct 1 hp; game ends when hp is depleted.
+- Em cada jogo o jogador começa com 3 hp. Toda vez que um bloco de torre é derrubado jogador é deduzido 1 hp; O jogo termina quando o HP está esgotado.
 
-- Player is rewarded with 25 point for every succesful stacked blocks(Success). If a block is stacked pefectly (Perfect) on top of the previous one, then player
-rewarded with 50 points instead. Consecutive Perfects awards additional 25 points.
+-  O jogador é recompensado com 25 pontos por cada bloco empilhado bem-sucedido (Sucesso). Se um bloco é empilhado pefectly (Perfeito) em cima do anterior, então jogador
+recompensado com 50 pontos. Consecutivos Perfects concede 25 pontos adicionais.
 
-**Note: Each Success or Perfect constitutes a floor**
+**Nota:  Cada Sucesso ou Perfeito constitui um andarr**
 
-  For example, the first Perfect awards 50 point. The second consecutive Perfect awards 75 points.
- The third consecutive Perfect awards 100 points.  etc.
+  Por exemplo, o primeiro Perfect atribui 50 pontos. A segunda Perfect consecutiva atribui 75 pontos.
+ A terceira Perfect consecutiva concede 100 pontos.  etc.
 
 <p align="center">
   <img width="550" src="https://user-images.githubusercontent.com/17680888/47473105-d9021180-d843-11e8-8c19-b6b78d86cbdf.png" />
 </p>
 
-## Customizing the game rule
+## Personalizando a regra do jogo
 
 ```
-git clone https://github.com/iamkun/tower_game.git
-cd tower_game
+https://github.com/pewiebe/TowerBuildJs.git
+cd TowerBuildJs
 npm install
 npm start
 ```
-Open `http://localhost:8082` in a web browser.
+Open `http://localhost:8082`  em um navegador da Web.
 
-- To customize image and sound resource files directly replace the corresponding file under `assets` directory.
-- To customize game rules modify the `option` object in `index.html`.
+- Para personalizar arquivos de recursos de imagem e som substitua diretamente o arquivo correspondente em`assets` diretório.
+- Para personalizar as regras do jogo, modifique o `option` objeto em `index.html`.
 
-## Option
+## Opção
 
-Use following table of `option` constants to complete customization of game rules.
+Use a tabela a seguir de `option` constantes para completar a personalização das regras do jogo.
 
-**Note: all constants are optionally included**
+**Note: todas as constantes são incluídas opcionalmente**
 
-| Option | Type | Description |
+| Opçãp| Tipo | Descrição |
 |---------|--------|-------------|
 | width          | number | Width of game interface |
 | height         | number | Height of game interface |
@@ -67,60 +73,56 @@ Use following table of `option` constants to complete customization of game rule
 | <a href="#setgamesuccess">setGameSuccess</a> | function | hook for number of current succesful game |
 | <a href="#setgamefailed">setGameFailed</a> | function | hook for number of current failed game |
 
-#### hookSpeed
-Speed of hook's movement
-This function takes in two parameters, currentFloor and currentScore, and returns a speed value.
+#### velocidade do gancho
+Velocidade de movimento do gancho
+Essa função usa dois parâmetros, currentFloor e currentScore, e retorna um valor de velocidade.
 ```
 function(currentFloor, currentScore) {
   return number
 }
 ```
 
-#### hookAngle
-Angle of hook
-This function takes in two parameters, currentFloor and currentScore, and returns a angle value.
+#### ângulo do gancho
+Ângulo do gancho
+Essa função usa dois parâmetros, currentFloor e currentScore, e retorna um valor de ângulo.
 ```
 function(currentFloor, currentScore) {
   return number
 }
 ```
 
-#### landBlockSpeed
-Speed of block sway
-This function takes in two parameters, currentFloor and currentScore, and returns a speed value.
+#### velocidade do bloco de terra
+Velocidade de oscilação do bloco
+Essa função usa dois parâmetros, currentFloor e currentScore, e retorna um valor de velocidade.
 ```
 function(currentFloor, currentScore) {
   return number
 }
 ```
 
-#### setGameScore
-hook for current score
-This function takes in one parameters, score, and sets currentScore to score.
+#### definir o placar do jogo
+gancho para pontuação atual
+Essa função recebe um parâmetro, score, e define currentScore como score.
 ```
 function(score) {
   // your logic
 }
 ```
 
-#### setGameSuccess
-hook for number of current succesful game
-This function takes in one parameters, score, and sets GameSuccess to successCount.
+#### definir o sucesso do jogo
+gancho para o número de jogos atuais bem-sucedidos
+Essa função usa um parâmetro, pontuação, e define GameSuccess como successCount.
 ```
 function(successCount) {
   // your logic
 }
 ```
 
-#### setGameFailed
-hook for number of current failed game
-This function takes in one parameters, score, and sets GameFailed to failedCount.
+#### jogo de set falhou
+gancho para o número de jogos com falha atual
+Essa função recebe um parâmetro, pontuação, e define GameFailed como failedCount.
 ```
 function(failedCount) {
   // your logic
 }
 ```
-
-## License
-
-MIT license.
